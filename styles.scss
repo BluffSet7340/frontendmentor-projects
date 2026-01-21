@@ -1,0 +1,176 @@
+$font_size_13px: 13px;
+$font_wt_500: 500;
+$font_wt_600: 600;
+
+$purple_50: hsl(260, 100%, 95%);
+$purple_300: hsl(264, 82%, 80%);
+$purple_500: hsl(263, 55%, 52%);
+
+$white_col: hsl(0, 0%, 100%);
+$grey_100: hsl(214, 17%, 92%);
+$grey_200: hsl(0, 0%, 81%);
+$grey_400: hsl(224, 10%, 45%);
+$grey_500: hsl(217, 19%, 35%);
+$dark_blue: hsl(219, 29%, 14%);
+$black: hsl(0, 0%, 7%);
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+*, ::after, ::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// did this to set the base font size on the browser to be 13px
+html{
+    font-size: $font_size_13px;
+    font-family: "Barlow Semi Condensed", 'Times New Roman', Times, serif;
+}
+
+// did the usual flex stuff so that I can centre the main container 
+// horizontally and vertically centre
+body{
+    // Use min-height so the page can grow past the viewport when content is taller
+    min-height: 100vh; 
+    // realized that I was using height instead of min-height
+    display: flex;
+    flex-direction: column; // main axis is now vertical
+    justify-content: center; // centres along main axis
+    align-items: center; // centres along horizontal axis
+    // Prefer padding for consistent spacing; margins can behave weirdly with 100vh + overflow
+    margin: 0;
+    padding: 5.7rem 2.7rem; 
+    background-color: $white_col;
+}
+
+.grid-container{
+    display: grid;
+    // by using minmax, I can make it so that it takes more space
+    // as the width of screen increases
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2.54rem;
+
+    .icon-title{
+        display: flex;
+        align-items: center;
+        gap: 1.15rem;
+        margin-bottom:1.5rem;
+    
+        .info-box{
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+    
+            .name{
+                font-weight: 500;
+            }
+        
+            .status{
+                font-size: 0.875rem;
+            }
+        }
+    }
+    
+    .review-title{
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        font-size: 1.45rem;
+    }
+
+    .container{
+        // padding-top, padding-right, padding-bottom, and padding-left 
+        padding: 2.54rem 2.85rem 2.54rem 2.85rem;
+        border-radius: 8px;
+        // x offset (positive) = right, y offset (positive) = bottom
+        box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.24);
+    }
+
+    .grid-container-1{
+        position: relative;
+        color: white;
+        background-color: $purple_500;
+        z-index: 1;
+
+        .quotation{
+            display: none;
+            position: absolute;
+            z-index: -99999; // had to go maximum power level to get this right
+            width: 20.4%;
+            // left: 0;
+            top: 0;
+            right: 14%;
+            // background-color: $purple_300;
+        }
+    }
+
+    .grid-container-2{
+        background-color: $grey_500;
+        color: $grey_100;
+    }
+
+    .grid-container-3{
+        background-color: white;
+        color: $grey_500;
+    }
+
+    .grid-container-4{
+        background-color: $black;
+        color: $grey_200;
+    }
+
+    .grid-container-5{
+        background-color: white;
+        color: $grey_500;
+    }
+}
+
+.image{
+    width: 32px;
+    border-radius: 50%;
+}
+
+.img-border{
+    border: 1px solid $purple_300;
+}
+
+@media screen and (min-width: 1370px) {
+    /* CSS rules to be applied when the condition is TRUE */
+    // body {
+    //   background-color: lightblue;
+    // }
+    // so we restructure the elements on the grid based on this 
+    
+    .grid-container{
+        grid-template-columns: repeat(4, 255px);
+
+        .grid-container-1{
+            grid-area: 1 / 1 / 2 / 3;
+
+            .quotation{
+                display: revert;
+            }
+        }
+
+        // it swaps positions with another container, if that spot is already taken
+        .grid-container-3{
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        .grid-container-5{
+            grid-area: 1 / 4 / 3 / 5;
+        }
+
+        .grid-container-4{
+            grid-area: 2 / 2 / 3 / 4;
+        }
+    }
+  }
+
