@@ -16,8 +16,6 @@ Been a while since I last did frontendmentor, it's good to be back. Definitely r
   - [Continued development](#continued-development)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -34,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [GitHub Solution](https://github.com/BluffSet7340/testimonial-grid-section)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
