@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: hsl(30, 38%, 92%);
+}
+body p {
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  color: hsl(228, 12%, 48%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 343px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.container img {
+  width: 100%;
+}
+.container .content {
+  padding: 0rem 1.5625rem;
+}
+.container .category {
+  padding-top: 1.25rem;
+  padding-bottom: 0.75rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+.container .product_title {
+  font-weight: 700;
+  font-family: Fraunces, sans-serif;
+  padding-bottom: 0.75rem;
+}
+.container .desc {
+  padding-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+}
+.prices span {
+  font-family: Fraunces, sans-serif;
+  padding-bottom: 1rem;
+}
+.prices .discount {
+  color: hsl(158, 36%, 37%);
+  font-size: 2rem;
+  font-weight: 700;
+  padding-right: 1.25rem;
+}
+.prices .old_price {
+  text-decoration: line-through;
+  color: hsl(228, 12%, 48%);
+}
+
+.btn {
+  padding-bottom: 1.25rem;
+  text-align: center;
+}
+.btn button {
+  width: 294px;
+  background-color: hsl(158, 36%, 37%);
+  color: hsl(0, 0%, 100%);
+  font-family: Montserrat, sans-serif;
+  padding: 1rem;
+  border: 1px solid hsl(158, 36%, 37%);
+  border-radius: 8px;
+  font-weight: 700;
+}
+.btn .fa-cart-shopping {
+  padding-right: 0.75rem;
+}
+.btn button:hover {
+  cursor: pointer;
+  background-color: hsl(158, 36%, 20%);
+}
+
+@media (min-width: 605px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+  }
+  .body {
+    width: 300px;
+    padding: 0rem 0.75rem;
+  }
+  .btn button {
+    width: 235px;
+  }
+  img {
+    max-width: 300px;
+  }
+  picture {
+    height: 450px;
+  }
+}
+@media (max-width: 320px) {
+  .container {
+    width: 315px;
+  }
+}/*# sourceMappingURL=style.css.map */

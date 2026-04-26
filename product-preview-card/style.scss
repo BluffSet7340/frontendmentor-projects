@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// Colours and Fonts
+
+// Weights: 500, 700
+$font-mont: Montserrat, sans-serif;
+// Weights: 700
+$font-fraun: Fraunces, sans-serif;
+
+// Primary
+$dark_cyan: hsl(158, 36%, 37%);
+$cream: hsl(30, 38%, 92%);
+
+// Neutral
+$very_dark_blue: hsl(212, 21%, 14%);
+$dark_grayish_blue: hsl(228, 12%, 48%);
+$white: hsl(0, 0%, 100%);
+
+// starting with a mobile first workflow
+
+// want to place the .container in the centre of the page
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // commented out the width as I read from some posts on Stack Overflow that
+    // browsers have a tendency to add on to it, resulting in horizontal scroll bar
+    // width: 100vw;
+    height: 100vh;
+    background-color: $cream;
+
+    p {
+        font-size: 14px;
+        font-family: $font-mont;
+        font-weight: 500;
+        color: $dark_grayish_blue;
+    }
+}
+
+// want to centre content inside of the container, specifically button and image
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 343px;
+    background-color: $white;
+    border-radius: 8px;
+    // To make the top corners of the image rounded
+    overflow: hidden;
+
+    // I think the image should take 100% width. I think this takes the full width of parent container
+    img {
+        width: 100%;
+    }
+
+    // left and right paddings of the content, excluding the button
+    .content {
+        padding: 0rem 1.5625rem;
+    }
+
+    // the top and bottom paddings aren't the same when I eyeball it
+    .category {
+        padding-top: 1.25rem;
+        padding-bottom: 0.75rem;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+    }
+
+    .product_title {
+        font-weight: 700;
+        font-family: $font-fraun;
+        padding-bottom: 0.75rem;
+    }
+
+    .desc {
+        padding-bottom: 1rem;
+        line-height: 1.5;
+    }
+}
+
+
+// targetting the prices now
+
+//prices are centred vertically
+.prices {
+    display: flex;
+    align-items: center;
+
+    span {
+        font-family: $font-fraun;
+        padding-bottom: 1rem;
+    }
+
+    .discount {
+        color: $dark_cyan;
+        font-size: 2rem;
+        font-weight: 700;
+        padding-right: 1.25rem;
+    }
+
+    .old_price {
+        text-decoration: line-through;
+        color: $dark_grayish_blue;
+    }
+}
+
+// add to cart button
+
+.btn {
+    padding-bottom: 1.25rem;
+    text-align: center;
+
+    button {
+        width: 294px;
+        background-color: $dark_cyan;
+        color: $white;
+        font-family: $font-mont;
+        padding: 1rem;
+        border: 1px solid $dark_cyan;
+        border-radius: 8px;
+        font-weight: 700;
+    }
+
+    .fa-cart-shopping {
+        padding-right: 0.75rem;
+    }
+
+    button:hover{
+        cursor: pointer;
+        background-color: hsl(158, 36%,20%);
+    }
+}
+
+
+// optimize for desktop displays
+
+@media (min-width: 605px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+    }
+
+    .body {
+        width: 300px;
+        padding: 0rem 0.75rem;
+    }
+
+    .btn button {
+        width: 235px;
+    }
+
+    img {
+        max-width: 300px;
+    }
+
+    picture {
+        // Bad idea, but otherwise image doesn't take full height
+        height: 450px;
+    }
+}
+
+
+// even smaller mobile display
+@media (max-width: 320px) {
+    .container {
+        width: 315px;
+    }
+}
