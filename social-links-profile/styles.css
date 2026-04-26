@@ -1,0 +1,114 @@
+*{
+    /* The usual settings */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --green: hsl(75, 94%, 57%);
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 0%, 20%);
+    --dark-grey: hsl(0, 0%, 12%);
+    --off-black: hsl(0, 0%, 8%);
+}
+
+/* Weights: 400, 600, 700 */
+/* Font size (paragraph): 14px */
+body{
+    font-family: Inter, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--off-black);
+}
+
+.content .quote{
+    /* target the sentence in double quotes */
+    font-size: 14px;
+    color: var(--white)
+}
+
+img{
+    width: 90px;
+    border-radius: 45px;
+    /* top right bottom left */
+    margin: 25px 0px 25px 0px;
+}
+
+/* size of container - 383*608 */
+.container{
+    /* center div elements with class profile and content */
+    /* got the dimensions by importing onto Paint.net */
+    width: 384px;
+    height: 608px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-grey);
+    /* Eyeballed the border radius */
+    border-radius: 7px;
+}
+
+.content{
+    /* centers horziontally and vertically all of the text and buttons */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* author's name */
+.content h2{
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+/* location */
+.content h5{
+    color: var(--green);
+    margin-bottom: 25px;
+}
+
+.quote{
+    margin-bottom: 25px;
+}
+
+/* styling the buttons */
+button{
+    background-color: var(--grey);
+    color: var(--white);
+    width: 300px;
+    padding: 15px 0px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+button:hover{
+    background-color: var(--green);
+    cursor: pointer;
+    color: var(--off-black);
+}
+
+/* media queries for mobile devices */
+@media screen and (max-width: 375px){
+    .container{
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .container{
+        width: 300px;
+    }
+    button{
+        width: 275px;
+    }
+}
