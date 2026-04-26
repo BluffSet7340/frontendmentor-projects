@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 0%, 50%);
+    --black: hsl(0, 0%, 7%);
+}
+
+body{
+    background-color: var(--yellow);
+    font-family: Figtree, sans-serif;
+    /* body takes full height of viewport */
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image{
+    /* padding on all sides for a centred fit */
+    padding: 24px;
+}
+.image img{
+    /* not sure how this works, but need to target the class and then
+    the image inside of that class to ensure proper fitting */
+    width: 100%;
+    border-radius: 12px;
+}
+
+.container{
+    /*measurements from Figma*/
+    width: 384px; 
+    /* height: 522px; */
+    border: 2px black solid;
+    background-color: var(--white);
+    /* styling for the border and box shadow */
+    border: 2px black solid;
+    border-radius: 15px;
+    box-shadow: 8px 8px 0px #000;
+}
+
+.cont_body, .footer{
+    /* top right bottom left */
+    padding: 0 24px 24px 24px;
+    /* padding: 20px; */
+}
+
+.desc{
+    color: var(--grey);
+}
+
+button{
+    /* Styled the button, added paddings and spacings */
+    padding: 4px 12px;
+    background-color: var(--yellow);
+    border: 0px;
+    border-radius: 5px;
+    font-weight: 800;
+}
+
+button, h2, p:not(:last-child){
+    /* Targets the button, date but not the description,*/
+    margin-bottom: 12px;
+}
+
+p{
+    font-size: 16px;
+}
+
+.date{
+    font-size: 15px;
+    font-weight: 600;
+    /* font-size: 15px; */
+}
+
+h2{
+    font-weight: 800;
+}
+
+.footer{
+    /* places the avatar and author name side by side */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer img{
+    /*  */
+    width: 32px;
+}
+
+.footer p{
+    margin-left: 12px;
+    font-weight: 800;
+}
+
+.title:hover{
+    /* when I hover over the title, it lights up yellow */
+    color: var(--yellow);
+    cursor: pointer;
+}
+
+/* font size should change without media query, should be made smaller */
+/* make the width smaller when width of viewport */
+@media (max-width: 375px){
+    .container{
+        width: 350px;
+    }
+}
+
+@media (max-width: 320px){
+    .container{
+        width: 300px;
+    }
+}
