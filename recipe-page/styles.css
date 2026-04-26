@@ -1,0 +1,339 @@
+/* variables */
+:root{
+/* primary */
+    --nutmeg: hsl(14, 45%, 36%);
+    --dark-raspberry: hsl(332, 51%, 32%);
+/* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --rose-white: hsl(330, 100%, 98%);
+    --eggshell: hsl(30, 54%, 90%);
+    --light-grey: hsl(30, 18%, 87%);
+    --wenge-brown: hsl(30, 10%, 34%);
+    --dark-charcoal: hsl(24, 5%, 18%);
+}
+
+*{
+    /* bullet point invisible due to 0 padding */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* All this to target the class = "container" div inside the body */
+    /* centres the class=container div element */
+    /*width: 100%;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--eggshell); 
+    /* default font size is 16px */
+}
+
+.container{
+    /* Width and margins eyeballed */
+    width: 740px;
+    background-color: var(--white);
+    /* top, right, bottom, left */
+    margin: 7.8rem 0;
+    border-radius: 1rem;
+    /* Targets the inner-area of the container */
+    padding: 2.5rem;
+}
+
+/* Target all div elements except the one containing an image so that paddings can be introduced */
+.container > div:not(:first-child){
+    /* extra padding to put text within the image horizontally */
+    padding: 0px 0.3125rem;
+}
+
+.container .recipe_img{
+    /* targets the image inside of the class="container" div to centre the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+img{
+    border-radius: 10px;
+    margin-bottom: 2.5rem;
+    width: 650px;
+}
+
+
+/* styling the font and text */
+
+/* Young Serif - Weights: 400
+    Outfit - Weights: 400, 600, 700  */
+
+h1, h2{
+    font-family: Young Serif, sans-serif, 'Times New Roman', Times, serif;
+    font-weight: 400;
+}
+
+h2{
+    color: var(--nutmeg);
+}
+
+p, ul, ol, h3{
+    font-family: Outfit, 'Times New Roman', Times, serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+h3{
+    font-weight: 600;
+    color: var(--dark-raspberry);
+}
+
+/* introduction */
+.recipe_intro{
+    display: flex;
+    flex-direction: column;
+    /* 2.1875rem is 35px */
+    gap: 2.1875rem;
+    margin-bottom: 2.1875rem;
+}
+
+/* prepping time for recipe */
+.prep_time{
+    width: 650px;
+    background-color: var(--rose-white);
+    /* height: 180px; */
+    border-radius: 5px;
+    margin-bottom: 2.1875rem;
+}
+
+.prep_time span{
+    font-weight: 600;
+}
+
+.prep_time h3{
+    padding: 1.875rem;
+}
+
+.prep_time ul{
+    /* top, right, bottom, left */
+    padding-left: 3.125rem;
+}
+
+.prep_time li{
+    /* space between each bullet-point */
+    margin-bottom: 1.25rem;
+    /* 30px to 1.875rem */
+    padding-left: 1.875rem;
+}
+
+.prep_time li:last-child{
+    padding-bottom: 1.5rem;
+}
+
+/* changes the colour of the bullet point */
+.prep_time li::marker{
+    color: var(--dark-raspberry);
+}
+
+/* ingredient list of recipe */
+.ingredients{
+    /* margin-bottom of the ingredient div element */
+    margin-bottom: 2.1875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.1875rem;
+}
+
+.ingredients ul{
+    padding-left: 1.125rem;
+}
+
+.ingredients li:not(:last-child){
+    margin-bottom: 1.25rem;
+}
+
+.ingredients li::marker{
+    color: var(--nutmeg);
+}
+
+/* spacing between start of text and its respective bullet point */
+.ingredients li{
+    padding-left: 1.875rem;
+}
+
+/* instruction set for the recipe */
+
+.instructions{
+    margin-bottom: 2.1875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.1875rem;
+}
+
+/* spacing between start of text and its respective number */
+.instructions li{
+    padding-left: 1.375rem;
+    /* adjust the line spacing between lines of text */
+    line-height: 1.5;
+}
+
+.instructions span{
+    font-weight: 600;
+}
+
+.instructions li:not(:last-of-type){
+    margin-bottom: 1.25rem;
+}
+
+/* to move the text and its respective number to the left */
+.instructions ol{
+    padding-left: 1.5rem;
+}
+
+/* Adding borders for Ingredients and Instructions */
+hr{
+    border: none;
+    border-top: 2px solid var(--light-grey);
+    /* 35px to 2.1875rem */
+    margin-bottom: 2.1875rem;
+}
+
+/* Nutrition */
+
+.nutrition{
+   display: flex;
+   flex-direction: column;
+   gap: 2.1875rem;
+}
+
+table{
+    font-family: Outfit, 'Times New Roman', Times, serif;
+    /* below property lets me add bottom borders to table rows specifically */
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* targets all rows except the last */
+tr:not(:last-of-type){
+    border-bottom: 2px solid var(--light-grey);
+}
+
+table .name{
+    padding-left: 1.75rem;
+}
+
+/* creates spacing between each table data */
+td{
+    padding: 18px 0;
+}
+
+/* targets the nutritional values */
+table .value{
+    font-weight: 600;
+    color: var(--nutmeg);
+}
+
+/* adjusting for various screen sizes on mobile */
+/* media query for screen sizes need to be in order? From largest to smallest */
+
+@media only screen and (max-width: 750px){
+    .container{
+        width: 600px;
+    }
+    .prep_time{
+        width: 500px;
+    }
+    img{
+        border-radius: 10px;
+        width: 500px;
+    }
+    *{
+        /* bullet point invisible due to 0 padding */
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
+
+@media only screen and (max-width: 426px){
+    .container{
+        width: 425px;
+        margin: 0;
+        /* top, right, bottom, left */
+        padding: 0 1rem 1rem 1rem;
+        border-radius: 0;
+    }
+    body{
+        background-color: var(--white);
+        font-size: 0.9rem;
+    }
+    .prep_time{
+        width: 375px;
+    }
+    img{
+        border-radius: 0;
+        width: 425px;
+    }
+    *{
+        /* bullet point invisible due to 0 padding */
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
+
+/* 376 px to trigger it at 375px */
+@media only screen and (max-width: 376px){
+    .container{
+        width: 375px;
+        margin: 0;
+        /* top, right, bottom, left */
+        /* padding: 0; */
+        padding: 0 1rem 1rem 1rem;
+        border-radius: 0;
+    }
+    body{
+        background-color: var(--white);
+        font-size: 0.9rem;
+    }
+    .prep_time{
+        /* targets the rose coloured box */
+        width: 350px;
+    }
+    img{
+        border-radius: 0;
+        width: 375px;
+    }
+    *{
+        /* bullet point invisible due to 0 padding */
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
+
+@media only screen and (max-width: 321px){
+    .container{
+        width: 320px;
+        margin: 0;
+        /* top, right, bottom, left */
+        padding: 0 1rem 1rem 1rem;
+        border-radius: 0;
+    }
+    body{
+        background-color: var(--white);
+        font-size: 0.9rem;
+    }
+    .prep_time{
+        width: 275px;
+    }
+    img{
+        border-radius: 0;
+        width: 320px;
+    }
+    *{
+        /* bullet point invisible due to 0 padding */
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
