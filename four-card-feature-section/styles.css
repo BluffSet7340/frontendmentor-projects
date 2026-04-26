@@ -1,0 +1,88 @@
+* {
+  font-family: Poppins;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0rem 1rem;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.desc {
+  text-align: center;
+}
+.desc .light {
+  font-weight: 200;
+  padding-top: 5rem;
+}
+.desc .dark {
+  font-weight: 600;
+}
+.desc .text {
+  color: hsl(229, 6%, 66%);
+  padding-top: 1rem;
+  margin-bottom: 5rem;
+}
+
+main .content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+main .content .card {
+  background-color: white;
+  box-shadow: 0px 10px 16px hsla(180, 62%, 55%, 0.15);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+main .content .card:first-child {
+  border-top: 0.5rem solid hsl(180, 62%, 55%);
+}
+main .content .card:nth-child(2) {
+  border-top: 0.5rem solid hsl(0, 78%, 62%);
+}
+main .content .card:nth-child(3) {
+  border-top: 0.5rem solid hsl(34, 97%, 64%);
+}
+main .content .card:last-child {
+  border-top: 0.5rem solid hsl(212, 86%, 64%);
+}
+main .content .card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+main .content .card p {
+  margin-bottom: 3rem;
+}
+main .content .card img {
+  display: block;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  main .text {
+    max-width: 500px;
+    margin: auto;
+  }
+  main .content {
+    max-width: 1400px;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  main .content .card {
+    width: 400px;
+  }
+  main .content .card:nth-child(odd) {
+    transform: translateY(50%);
+  }
+  main .content:last-child {
+    padding-bottom: 5rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
